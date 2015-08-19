@@ -1,0 +1,10 @@
+Package: region5air
+Type: Package
+Title: Air quality data from EPA Region 5
+Version: 0.1
+Date: 2015-08-10
+Author: Nathan Byers
+Maintainer: Nathan Byers <natebyers@gmail.com>
+Description: Air quality data from EPA's Air Quality System database.
+License: GPL-3
+LazyData: TRUE
