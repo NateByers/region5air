@@ -1,6 +1,6 @@
-#' Air Quality Data for Chicago.
+#' Air Quality Data from EPA's AirData site.
 #'
-#' A dataset containing ozone, PM2.5, and temperature for the Chicago area between
+#' A dataset containing hourly values of ozone, PM2.5, and temperature for the Chicago area between
 #' January 1, 2013 and December 31, 2014.
 #'
 #' @format A data frame with 367597 rows and 20 variables:
@@ -27,4 +27,23 @@
 #'   \item{qualifiers}{AQS qualifier code(s) separated by spaces. Qualifiers indicate whether the data have been flagged by the submitter and the reason the sample was so flagged.}
 #' }
 #' @source \url{https://ofmext.epa.gov/AQDMRS/aqdmrs.html}
-"chicago"
+"airdata"
+
+
+#' Air Quality Data from a Chicago monitor.
+#'
+#' A dataset containing daily values of ozone, temperature, and solar radiation from a Chicago monitor between
+#' January 1, 2013 and December 31, 2013.
+#'
+#' @format A data frame with 730 rows and 6 variables:
+#' \describe{
+#'   \item{date}{Year-Month-Day}
+#'   \item{ozone}{8-hour maximum value in ppm}
+#'   \item{temp}{1-hour maximum value in degrees Fahrenheit}
+#'   \item{solar}{1-hour maximum value in Langleys/minute}
+#'   \item{month}{Month (1-12)}
+#'   \item{weekday}{Day of week (1-7)}
+#' }
+#' @details These are measurements from a monitor with EPA AQS code 170314201 at latitude 42.14 and longitude -87.79923.
+#' @source \url{https://ofmext.epa.gov/AQDMRS/aqdmrs.html}
+"chicago_air"
