@@ -13,22 +13,22 @@ devtools::install_github("NateByers/region5air")
 
 ## Example
 
-Obtain Ozone, PM2.5, and temperature data for the Chicago area between January 1, 2013 and December 31, 2014:
+Obtain Ozone, temperature, and solar radiation for the Chicago area between January 1 December 31, 2013:
 
 
 ```r
-data(chicago)
-head(chicago)
+data(chicago_air)
+head(chicago_air)
 ```
 
 
 ```
-##           site data_status action_code           datetime parameter
-## 1 840170890005           0          10 20141231T0100-0600     44201
-## 2 840170311601           0          10 20141231T0100-0600     44201
-## 3 840170314002           0          10 20141231T0100-0600     44201
-## 4 840170310001           0          10 20141231T0100-0600     44201
-## 5 840171110001           0          10 20141231T0100-0600     44201
-## 6 840170971007           0          10 20141231T0100-0600     44201
+##         date ozone temp solar month weekday
+## 1 2013-01-01 0.032   17  0.65     1       3
+## 2 2013-01-02 0.020   15  0.61     1       4
+## 3 2013-01-03 0.021   28  0.17     1       5
+## 4 2013-01-04 0.028   18  0.62     1       6
+## 5 2013-01-05 0.025   26  0.48     1       7
+## 6 2013-01-06 0.026   36  0.47     1       1
 ```
 

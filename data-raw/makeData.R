@@ -42,5 +42,6 @@ names(chicago_air)[names(chicago_air) == solar_parameter] <- "solar"
 chicago_air$month <- month(chicago_air$date)
 chicago_air$weekday <- wday(chicago_air$date)
 chicago_air <- select(chicago_air, date, ozone, temp, solar, month, weekday)
+chicago_air <- as.data.frame(chicago_air)
 
 devtools::use_data(air_data, chicago_air)
