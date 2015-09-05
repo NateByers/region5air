@@ -7,6 +7,7 @@ l <- lapply(c("data-raw/ozone.txt", "data-raw/pm2_5.txt", "data-raw/temp.txt"),
             read.csv, stringsAsFactors = FALSE)
 
 airdata <- Reduce(rbind, l)
+airdata <- filter(airdata, site != "END OF FILE")
 
 solar <- read.csv("data-raw/solar.txt", stringsAsFactors = FALSE)
 
@@ -44,4 +45,4 @@ chicago_air$weekday <- wday(chicago_air$date)
 chicago_air <- select(chicago_air, date, ozone, temp, solar, month, weekday)
 chicago_air <- as.data.frame(chicago_air)
 
-devtools::use_data(air_data, chicago_air)
+devtools::use_data(airdata, chicago_air)
