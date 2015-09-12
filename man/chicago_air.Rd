@@ -3,7 +3,7 @@
 \docType{data}
 \name{chicago_air}
 \alias{chicago_air}
-\title{Air Quality Data from a Chicago monitor.}
+\title{Air quality data from a Chicago monitor.}
 \format{A data frame with 730 rows and 6 variables:
 \describe{
   \item{date}{Year-Month-Day}
@@ -24,7 +24,8 @@ A dataset containing daily values of ozone, temperature, and solar radiation fro
 January 1, 2013 and December 31, 2013.
 }
 \details{
-These are measurements from a monitor with EPA AQS code 170314201 at latitude 42.14 and longitude -87.79923.
+These are measurements from a monitor with EPA AQS code 840170314201 at latitude 42.14 and longitude -87.79923,
+datum WGS84.
 }
 \keyword{datasets}
 

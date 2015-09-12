@@ -46,4 +46,17 @@ chicago_air <- select(chicago_air, date, ozone, temp, solar, month, weekday)
 chicago_air <- as.data.frame(chicago_air)
 chicago_air <- chicago_air[chicago_air$date < as.Date("2014-01-01"), ]
 
-devtools::use_data(airdata, chicago_air)
+hourly_windspeed <- read.csv("data-raw/wind_speed_cook.txt", stringsAsFactors = FALSE)
+hourly_wind_dir <- read.csv("data-raw/wind_dir_cook.txt", stringsAsFactors = FALSE)
+hourly_ozone <- read.csv("data-raw/ozone_cook.txt", stringsAsFactors = FALSE)
+h <- Reduce(rbind, list(hourly_windspeed, hourly_wind_dir, hourly_ozone))
+h <- filter(h, site == "840170310001")
+h <- group_by(h, datetime, parameter) %>%
+  filter(poc == min(poc)) %>% select(datetime, parameter, value)
+h$parameter <- factor(h$parameter, levels = c(61103, 61104, 44201),
+                      labels = c("wind_speed", "wind_dir", "ozone"))
+chicago_wind <- spread(h, parameter, value = value)
+
+devtools::use_data(airdata, chicago_air, chicago_wind)
+
+

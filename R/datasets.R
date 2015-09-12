@@ -30,7 +30,7 @@
 "airdata"
 
 
-#' Air Quality Data from a Chicago monitor.
+#' Air quality data from a Chicago monitor.
 #'
 #' A dataset containing daily values of ozone, temperature, and solar radiation from a Chicago monitor between
 #' January 1, 2013 and December 31, 2013.
@@ -44,6 +44,24 @@
 #'   \item{month}{Month (1-12)}
 #'   \item{weekday}{Day of week (1-7)}
 #' }
-#' @details These are measurements from a monitor with EPA AQS code 170314201 at latitude 42.14 and longitude -87.79923.
+#' @details These are measurements from a monitor with EPA AQS code 840170314201 at latitude 42.14 and longitude -87.79923,
+#' datum WGS84.
 #' @source \url{https://ofmext.epa.gov/AQDMRS/aqdmrs.html}
 "chicago_air"
+
+#' Wind data from a Chicago monitor.
+#'
+#' A dataset containing hourly values of wind speed, wind direction, and ozone concentration from a Chicago monitor between
+#' January 1, 2013 and December 31, 2013.
+#'
+#' @format A data frame with 8643 rows and 4 variables:
+#' \describe{
+#'   \item{datetime}{Date and time of the data value, given in the following format without spaces: YYYYMMDDThhmmTZD. Four-digit year (YYYY), two-digit month (MM), two-digit day (DD), capital letter T (time), two-digit hour (hh, in 24-hr time), two-digit minutes (mm), and the time zone designation, TZD. (The date-time field is the ISO 8601 Basic.) TZD is +hhmm/-hhmm from GMT. The time corresponds to the begin time of the sampling period.}
+#'   \item{wind_speed}{1-hour resultant value in knots}
+#'   \item{wind_dir}{1-hour resultant wind direction in degrees compass}
+#'   \item{ozone}{1-hour value in ppm}
+#' }
+#' @details These are measurements from a monitor with EPA AQS code 840170310001 at latitude 41.67099 and longitude -87.73246,
+#' datum WGS84.
+#' @source \url{https://ofmext.epa.gov/AQDMRS/aqdmrs.html}
+"chicago_wind"
