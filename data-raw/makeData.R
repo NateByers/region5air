@@ -45,6 +45,7 @@ chicago_air$weekday <- wday(chicago_air$date)
 chicago_air <- select(chicago_air, date, ozone, temp, solar, month, weekday)
 chicago_air <- as.data.frame(chicago_air)
 chicago_air <- chicago_air[chicago_air$date < as.Date("2014-01-01"), ]
+chicago_air$date <- as.character(chicago_air$date)
 
 hourly_windspeed <- read.csv("data-raw/wind_speed_cook.txt", stringsAsFactors = FALSE)
 hourly_wind_dir <- read.csv("data-raw/wind_dir_cook.txt", stringsAsFactors = FALSE)
