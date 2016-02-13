@@ -58,6 +58,13 @@ h$parameter <- factor(h$parameter, levels = c(61103, 61104, 44201),
                       labels = c("wind_speed", "wind_dir", "ozone"))
 chicago_wind <- spread(h, parameter, value = value)
 
-devtools::use_data(airdata, chicago_air, chicago_wind)
+temp <- tempfile()
+download.file('http://aqsdr1.epa.gov/aqsweb/aqstmp/airdata/daily_42602_2014.zip', temp)
+unzip(temp)
+unlink(temp)
+no2_2014 <- read.csv('daily_42602_2014.csv', stringsAsFactors = FALSE)
+unlink('daily_42602_2014.csv')
+
+devtools::use_data(airdata, chicago_air, chicago_wind, no2_2014, overwrite = TRUE)
 
 
